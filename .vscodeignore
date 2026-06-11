@@ -1,0 +1,12 @@
+﻿src/**
+.gitignore
+tsconfig.json
+**/*.map
+**/*.ts
+node_modules/**
+VS-CODE FILES/**
+VS-CODE FILES.zip
+.claude/**
+CLAUDE_CODE_PROMPT_vscode_build.md
+**/*.md
+!readme.md

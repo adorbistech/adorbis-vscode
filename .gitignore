@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.vsix
+.claude/
+VS-CODE FILES/
+VS-CODE FILES.zip
+CLAUDE_CODE_PROMPT_vscode_build.md
+CLI-prompt/

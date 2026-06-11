@@ -1,0 +1,153 @@
+{
+  "name": "adorbis-ai",
+  "displayName": "Adorbis AI",
+  "description": "One key. Every model. Auto-routed. Connect VS Code, Cline, Continue, and Claude Code to the Adorbis AI control plane.",
+  "version": "1.0.0",
+  "publisher": "adorbis",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#07080d",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "keywords": [
+    "AI",
+    "LLM",
+    "Cline",
+    "Continue",
+    "Claude Code",
+    "Cursor",
+    "OpenAI",
+    "Anthropic",
+    "API",
+    "routing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adorbistech/adorbis-vscode.git"
+  },
+  "homepage": "https://ai.adorbistech.com",
+  "bugs": {
+    "url": "https://github.com/adorbistech/adorbis-vscode/issues"
+  },
+  "license": "MIT",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "adorbis.setup",
+        "title": "Adorbis: Setup — Connect Your API Key",
+        "category": "Adorbis"
+      },
+      {
+        "command": "adorbis.checkBalance",
+        "title": "Adorbis: Check Credit Balance",
+        "category": "Adorbis"
+      },
+      {
+        "command": "adorbis.configTool",
+        "title": "Adorbis: Configure AI Tool (Cline / Continue / Claude Code)",
+        "category": "Adorbis"
+      },
+      {
+        "command": "adorbis.openDashboard",
+        "title": "Adorbis: Open Dashboard",
+        "category": "Adorbis"
+      },
+      {
+        "command": "adorbis.logout",
+        "title": "Adorbis: Sign Out",
+        "category": "Adorbis"
+      }
+    ],
+    "configuration": {
+      "title": "Adorbis AI",
+      "properties": {
+        "adorbis.apiKey": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Your Adorbis API key. Get one free at [ai.adorbistech.com](https://ai.adorbistech.com).",
+          "order": 1
+        },
+        "adorbis.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Adorbis credit balance in the status bar.",
+          "order": 2
+        },
+        "adorbis.defaultDepartment": {
+          "type": "string",
+          "default": "adorbis/coder",
+          "enum": [
+            "adorbis/coder",
+            "adorbis/quick",
+            "adorbis/auto",
+            "adorbis/write",
+            "adorbis/reason"
+          ],
+          "enumDescriptions": [
+            "Code generation, debugging, review",
+            "Fast responses, simple Q&A",
+            "Smart routing — best model for your task",
+            "Long-form writing and documentation",
+            "Math, logic, multi-step analysis"
+          ],
+          "description": "Default Adorbis department for AI tool configurations.",
+          "order": 3
+        },
+        "adorbis.autoConfigOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically write tool configs when API key changes.",
+          "order": 4
+        }
+      }
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "adorbis.setup"
+        },
+        {
+          "command": "adorbis.checkBalance"
+        },
+        {
+          "command": "adorbis.configTool"
+        },
+        {
+          "command": "adorbis.openDashboard"
+        },
+        {
+          "command": "adorbis.logout"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "preview": true,
+  "qna": "false"
+}
