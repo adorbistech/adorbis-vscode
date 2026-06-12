@@ -2,7 +2,7 @@
   "name": "adorbis-ai",
   "displayName": "Adorbis AI",
   "description": "One key. Every model. Auto-routed. Connect VS Code, Cline, Continue, and Claude Code to the Adorbis AI control plane.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "adorbis",
   "icon": "media/icon.png",
   "galleryBanner": {
